@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de Botón con JavaScript</title>
+    <style>
+        /* Estilos para el botón */
+        #miBoton {
+            background-color: #3498db; /* Azul frío */
+            color: #fff; /* Texto en blanco */
+            font-size: 20px; /* Tamaño de fuente más grande */
+            padding: 10px 20px; /* Espaciado interior para aumentar el tamaño del botón */
+            border-radius: 10px; /* Bordes curvos */
+            border: none; /* Sin borde */
+            cursor: pointer; /* Cambio de cursor al pasar el ratón */
+        }
+
+        /* Estilos para los mensajes */
+        #contenedor {
+            margin-top: 10px; /* Espacio superior */
+            font-size: 18px; /* Tamaño de fuente para mensajes */
+            color: #333; /* Color de texto oscuro */
+        }
+
+        *{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+<div id="contenedor">
+    <button id="miBoton" onclick="calcularBoton()">Calcular</button><br>
+</div>
+
+<script>
+    function calcularBoton() {
+        var contenedor = document.getElementById("contenedor");
+
+        
+        var boton = document.getElementById("miBoton");
+        
+
+        var numero_a = prompt("Agrega el primer número");
+        var numero_b = prompt("Agrega el segundo número");
+
+        numero_a = parseFloat(numero_a);
+        numero_b = parseFloat(numero_b);
+        if (isNaN(numero_a) || isNaN(numero_b)) {
+            contenedor.innerHTML += "No se ha agregado ningún número.<br>";
+        } else {
+            for (var i = 1; i <= 5; i++) {
+            var resultado = 0;
+            var operacion = "";
+
+            if (i == 1) {
+                resultado = numero_a + numero_b;
+                operacion = "+";
+            } else if (i == 2) {
+                resultado = numero_a - numero_b;
+                operacion = "-";
+            } else if (i == 3) {
+                resultado = numero_a * numero_b;
+                operacion = "x";
+            } else if (i == 4) {
+                resultado = numero_a / numero_b;
+                operacion = "/";
+            } else if (i == 5) {
+                resultado = numero_a % numero_b;
+                operacion = "%";
+            }
+            
+            alert(resultado);
+            contenedor.innerHTML += numero_a + " " + operacion + " " + numero_b + " = " + resultado + "<br>";
+        }
+    }
+    }
+</script>
+<Br>
+</body>
+</html>
